@@ -8,14 +8,15 @@ jobs:
     - name: 'Checkout codes'
       uses: actions/checkout@v1
     - name: 'Send email'
-      uses: dawidd6/action-send-mail@v3
+      uses: dawidd6/action-send-mail@master
       with:
         server_address: smtp.qq.com
         server_port: 465
-        username: ${{secrets.MAIL_USERNAME}}
-        password: ${{secrets.MAIL_PASSWORD}}
+        username: ${{ secrets.MAIL_USERNAME }}
+        password: ${{ secrets.MAIL_PASSWORD }}
         subject: Github Actions job result
-        to: ${{secrets.MAIL_TARGET}}
-        from: Luke Skywalker 
         body: completed successfully!
+        to: ${{ secrets.MAIL_TARGET }}
+        from: Luke Skywalker 
+        
 
